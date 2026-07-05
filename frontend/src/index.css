@@ -156,7 +156,7 @@ body {
 
 /* ReactFlow canvas container overrides */
 .react-flow__renderer {
-  background: var(--canvas-bg) !important;
+  background: transparent !important;
 }
 
 /* Sidebar Styling - Enlarged & Glassmorphism */
@@ -447,14 +447,16 @@ select {
 }
 
 .react-flow__minimap-mask {
-  fill: rgba(124, 111, 247, 0.04) !important;
+  fill: color-mix(in srgb, var(--accent-primary) 6%, transparent) !important;
   stroke: var(--accent-primary) !important;
   stroke-width: 1.5px !important;
 }
 
 .react-flow__minimap-node {
-  fill: var(--surface-3) !important;
-  stroke: var(--border-subtle) !important;
+  stroke: var(--border-strong) !important;
+  stroke-width: 1.2px !important;
+  rx: 6px;
+  ry: 6px;
 }
 
 /* Draggable Node Toolbar Items */

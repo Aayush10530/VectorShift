@@ -190,25 +190,31 @@ export const App = () => {
               variant="dots"
               gap={20}
               size={1.5}
-              color={theme === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)'}
+              color="var(--accent-primary)"
+              style={{ opacity: theme === 'dark' ? 0.25 : 0.35 }}
             />
             <Controls />
             <MiniMap
               style={{
-                background: theme === 'dark' ? '#111118' : 'var(--surface-1)',
-                border: theme === 'dark' ? '1px solid #2E2E3E' : '1px solid var(--border-subtle)',
-                borderRadius: 8
+                background: theme === 'dark' ? 'rgba(17, 17, 24, 0.7)' : 'var(--surface-1)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: 12
               }}
               nodeColor={(node) => {
                 const colors = {
-                  customInput: '#34D399',
-                  customOutput: '#FBBF24',
-                  llm: '#7C6FF7',
-                  text: '#22D3EE'
+                  customInput: 'color-mix(in srgb, var(--accent-green) 40%, transparent)',
+                  customOutput: 'color-mix(in srgb, var(--accent-amber) 40%, transparent)',
+                  llm: 'color-mix(in srgb, var(--accent-primary) 40%, transparent)',
+                  text: 'color-mix(in srgb, var(--accent-cyan) 40%, transparent)',
+                  promptCrafter: 'color-mix(in srgb, var(--accent-pink) 40%, transparent)',
+                  filter: 'color-mix(in srgb, var(--accent-cyan) 40%, transparent)',
+                  transform: 'color-mix(in srgb, var(--accent-amber) 40%, transparent)',
+                  apiCall: 'color-mix(in srgb, var(--accent-red) 40%, transparent)',
+                  merge: 'color-mix(in srgb, var(--accent-green) 40%, transparent)'
                 }
-                return colors[node.type] || '#F472B6'
+                return colors[node.type] || 'color-mix(in srgb, var(--accent-pink) 40%, transparent)'
               }}
-              maskColor={theme === 'dark' ? 'rgba(0,0,0,0.7)' : 'rgba(94, 84, 72, 0.2)'}
+              maskColor={theme === 'dark' ? 'rgba(124, 111, 247, 0.06)' : 'rgba(88, 70, 226, 0.06)'}
             />
           </ReactFlow>
         </div>
